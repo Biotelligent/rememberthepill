@@ -26,15 +26,14 @@ import android.view.ViewGroup;
 public class MainActivity extends Activity implements
 		SetReminderDialog.ConfirmDialogCompliant {
 
-	public static ArrayList<String> reminders;
+	public static ArrayList<String> reminders = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		// TODO: get all the Reminders
-		reminders = new ArrayList<String>();
-
+	
 		setContentView(R.layout.activity_main);
 
 		if (savedInstanceState == null) {
@@ -104,28 +103,6 @@ public class MainActivity extends Activity implements
 
 	private void schedulePillReminder(int hour, int min) {
 		
-		int notificationId = 001;
-		
-		// Build intent for notification content
-		/*
-		Intent viewIntent = new Intent(getApplicationContext(), MainActivity.class);
-		
-		PendingIntent viewPendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, viewIntent, 0);
-
-		NotificationCompat.Builder notificationBuilder =
-		        new NotificationCompat.Builder(getApplicationContext())
-		        .setSmallIcon(R.drawable.ic_pill)
-		        .setContentTitle("time to pill")
-		        //.setContentText(eventLocation)
-		        .setContentIntent(viewPendingIntent);
-
-		// Get an instance of the NotificationManager service
-		NotificationManagerCompat notificationManager =
-		        NotificationManagerCompat.from(getApplicationContext());
-
-		//Build the notification and issues it with notification manager.
-		notificationManager.notify(notificationId, notificationBuilder.build());
-		*/
 		Calendar calendar = Calendar.getInstance();
 		
 		calendar.setTimeInMillis(System.currentTimeMillis());

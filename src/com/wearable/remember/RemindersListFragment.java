@@ -29,7 +29,7 @@ public class RemindersListFragment extends ListFragment {
 
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
-		Toast.makeText(getActivity(), "tcaste algo", Toast.LENGTH_LONG).show();
+		Toast.makeText(getActivity(), "TODO: remove dialog", Toast.LENGTH_SHORT).show();
 	}
 
 

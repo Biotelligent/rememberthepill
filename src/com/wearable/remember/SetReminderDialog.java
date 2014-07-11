@@ -15,7 +15,6 @@ public class SetReminderDialog extends DialogFragment implements PickerDialog.In
 	ConfirmDialogCompliant caller;
 	
 	private int hour;
-	
 	private int min;
 	
 	public interface ConfirmDialogCompliant {
@@ -25,11 +24,13 @@ public class SetReminderDialog extends DialogFragment implements PickerDialog.In
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		getDialog().setTitle("New Reminder");
+		
 		View v = inflater.inflate(R.layout.fragment_dialog, container,
 				false);
 
-		Button timePickerButton = (Button)v.findViewById(R.id.btnTimePicker);
-		timePickerButton.setOnClickListener(new View.OnClickListener() {
+		EditText timePicker = (EditText)v.findViewById(R.id.etTime);
+		timePicker.setOnClickListener(new View.OnClickListener() {
 	        public void onClick(View v) {
 	        	DialogFragment timePicker = new PickerDialog();
 	        	timePicker.show(getFragmentManager(), "timePicker");
@@ -39,7 +40,9 @@ public class SetReminderDialog extends DialogFragment implements PickerDialog.In
 	    Button saveReminderButton = (Button)v.findViewById(R.id.btnSaveReminder);
 	    saveReminderButton.setOnClickListener(new View.OnClickListener() {
 	        public void onClick(View v) {
-	        	caller.setReminder("test", "some-time", hour, min);
+	        	//EditText etName = (EditText)v.findViewById(R.id.etName);
+	        	//String pillName = etName.getText().toString();
+	        	caller.setReminder("pill", "some-time", hour, min);
 	        }
 	    });
 	    
@@ -59,7 +62,7 @@ public class SetReminderDialog extends DialogFragment implements PickerDialog.In
 	
 	@Override
 	public void selectedDate(String date, int hour, int min) {
-		EditText tv = (EditText)getView().findViewById(R.id.etDATE);
+		EditText tv = (EditText)getView().findViewById(R.id.etTime);
 		tv.setText(date);	
 		this.hour = hour;
 		this.min = min;

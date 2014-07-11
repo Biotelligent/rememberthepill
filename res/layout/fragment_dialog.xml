@@ -3,59 +3,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/textView1"
+    <Button
+        android:id="@+id/btnSaveReminder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/etDATE"
-        android:layout_alignBottom="@+id/etDATE"
-        android:layout_alignParentLeft="true"
-        android:text="TextView" />
+        android:layout_below="@+id/etTime"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/btnSave" />
 
     <TextView
         android:id="@+id/textView2"
+        android:labelFor="@+id/etTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/etName"
-        android:layout_alignBottom="@+id/etName"
-        android:layout_alignParentLeft="true"
-        android:text="TextView" />
+        android:layout_alignLeft="@+id/etTime"
+        android:layout_below="@+id/etName"
+        android:layout_marginTop="20dp"
+        android:text="@string/TimeLabel" />
 
-    <EditText
-        android:id="@+id/etDATE"
+    <TextView
+        android:id="@+id/textView1"
+        android:labelFor="@+id/etName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etName"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="175dp"
-        android:ems="10"
-        android:inputType="time" />
+        android:layout_marginTop="20dp"
+        android:text="@string/NameLabel" />
 
     <EditText
         android:id="@+id/etName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/etDATE"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="53dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <Button
-        android:id="@+id/btnSaveReminder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etDATE"
+        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:text="SAVE" />
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:gravity="center" />
 
-    <Button
-        android:id="@+id/btnTimePicker"
-        style="?android:attr/buttonStyleSmall"
+    <EditText
+        android:id="@+id/etTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/etDATE"
-        android:layout_toRightOf="@+id/etDATE" />
+        android:layout_alignLeft="@+id/etName"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="time"
+        android:gravity="center" />
 
 </RelativeLayout>

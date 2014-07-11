@@ -4,5 +4,10 @@
     <string name="app_name">Remember the Pill!</string>
     <string name="action_settings">Settings</string>
     <string name="ReminderSetDialog">New Reminder</string>
-
+    
+    <string name="NameLabel">Pill:</string>
+	<string name="TimeLabel">Time:</string>
+	<string name="btnSave">Save</string>
+	<string name="imgDescritionNoReminders"> No reminders </string>
+	
 </resources>
